@@ -1,0 +1,75 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    color: white;
+    font-family: 'Courier New', monospace;
+}
+
+#baner {
+    position: fixed;
+    width: 100vw;
+    height: 90px;
+    background-color: rgb(0, 6, 54);
+    text-align: center;
+}
+
+#baner ul {
+    list-style: none;
+}
+
+#baner li {
+    display: inline;
+    color: white;
+}
+
+#baner li::before {
+    content: "| ";
+}
+
+#baner li::after {
+    content: "  |";
+}
+
+
+h1 {
+    margin: 5px;
+}
+
+
+#panel {
+    position: fixed;
+    top: 90px;
+    width: 100vw;
+    height: 80vh;
+
+    background: linear-gradient(272deg,#000000,#000076,#0000ff);
+    background-size: 240% 240%;
+    animation: gradient-animation 28s ease infinite;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    background-color: rgb(0, 6, 54);
+    text-align: center;
+}
+
+#display {
+    height: 100%;
+    width: 100%;
+    border: 0px;
+}
+
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
