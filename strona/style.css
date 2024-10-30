@@ -31,8 +31,14 @@ body {
     content: "  |";
 }
 
+#baner a {
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+}
 
-h1 {
+
+#baner h1 {
     margin: 5px;
 }
 
