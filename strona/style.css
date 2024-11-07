@@ -73,6 +73,9 @@ body {
     border: 0px;
 }
 
+#repertuar {
+    border: 1px;
+}
 @keyframes gradient-animation {
     0% {
       background-position: 0% 50%;
@@ -84,3 +87,4 @@ body {
       background-position: 0% 50%;
     }
 }
+
