@@ -4,6 +4,7 @@ body {
     display: flex;
     color: white;
     font-family: 'Courier New', monospace;
+    align-content: center;
 }
 
 #baner {
@@ -73,9 +74,18 @@ body {
     border: 0px;
 }
 
-#repertuar {
-    border: 1px;
+input[type=text]{
+    width: 100%;
+    padding: 5px;
+    margin: 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
+
+
+
 @keyframes gradient-animation {
     0% {
       background-position: 0% 50%;

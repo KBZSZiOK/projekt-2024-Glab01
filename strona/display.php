@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <title>title</title>
-    <link rel="stylesheet" href="./style.css">
+    <style>
+        <?php include "style.css" ?>
+    </style>
 </head>
 <body>
     
@@ -11,13 +13,6 @@
 </html>
 <?php
     $mysqli = new mysqli("localhost","root","","kino");
-
-    if ($mysqli -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-    exit();
-    } else {
-        echo "Connection established <br>";
-    }
 
     $Query = "SELECT SEANSE.TERMIN, SEANSE.LICZBA_WOLNYCH_MIEJSC, FILMY.TYTUŁ FROM `SEANSE`, `FILMY` WHERE SEANSE.FILM_ID = FILMY.ID;";
     $QueryExec = $mysqli->query($Query);
