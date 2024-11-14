@@ -30,13 +30,16 @@
         $MovieGenre = (int)$_POST["genre"];
         
         $mysqli = new mysqli("localhost","root","","kino");
-        $mysqli -> query("INSERT INTO FILMY (ID, TYTUŁ, REŻYSER, CZAS TRWANIA) VALUES (DEFAULT, $MovieTitle, $MovieDirector, $MovieLenght);");
+        if ($mysqli -> query("INSERT INTO FILMY (ID, TYTUŁ, REŻYSER, CZAS_TRWANIA) VALUES (DEFAULT, '$MovieTitle', '$MovieDirector', $MovieLenght);") === TRUE){
+            echo "Dodano nowy film";            
+        } else {
+            echo "Nope";
+        }
         
-        #$MovieIdCheck = $mysqli -> query("SELECT ID FROM `FILMY` ORDER BY ID DESC;");
-        #$MovieIDs = $MovieIdCheck->fetch_assoc();
-        #$NewestMovieID = $MovieIDs["ID"];
+        $MovieIdCheck = $mysqli -> query("SELECT ID FROM `FILMY` ORDER BY ID DESC;");
+        $MovieIDs = $MovieIdCheck->fetch_assoc();
+        $NewestMovieID = $MovieIDs["ID"];
         
-        #$mysqli -> query("INSERT INTO FILMY_RODZAJ (ID, FILMY_ID, RODZAJ_ID) VALUES (DEFAULT, $NewestMovieID, $MovieGenre);");
-
+        $mysqli -> query("INSERT INTO FILMY_RODZAJ (ID, FILMY_ID, RODZAJ_ID) VALUES (DEFAULT, $NewestMovieID, $MovieGenre);");
     }
 ?>
