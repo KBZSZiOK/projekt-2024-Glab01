@@ -32,7 +32,12 @@
                 }
             ?>
         </select><br>
-        Nr. Sali <input type="number" id="roomrequest" name="roomrequest"><br>
+        Nr. Sali <select id="room" name="room">
+            <?php
+                $mysqli = new mysqli("localhost","root","","kino");
+                $MovieCheck = $mysqli -> query('SELECT * FROM FILMY;');
+            ?>
+            </select><br>
         Data <input type="date" id="daterequest" name="daterequest"><br>
         <input type="submit" value="Dodaj spektakl">
     </form>
