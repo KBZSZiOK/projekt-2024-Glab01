@@ -26,9 +26,8 @@
             <?php
                 $mysqli = new mysqli("localhost","root","","kino");
                 $MovieCheck = $mysqli -> query('SELECT * FROM FILMY;');
-                $row = $MovieCheck -> fetch_assoc();
-
-                while ($row){
+                
+                while ($row = $MovieCheck -> fetch_assoc()) {
                     echo "<option value='" . $row['ID'] . "'>" . $row['TYTUŁ'] . "</option>"; 
                 }
             ?>
