@@ -35,10 +35,14 @@
         Nr. Sali <select id="room" name="room">
             <?php
                 $mysqli = new mysqli("localhost","root","","kino");
-                $MovieCheck = $mysqli -> query('SELECT * FROM FILMY;');
+                $RoomCheck = $mysqli -> query('SELECT * FROM SALE;');
+
+                while ($row = $RoomCheck -> fetch_assoc()) {
+                    echo "<option value='" . $row['ID'] . "'>" . $row['ID'] . " - pojemność sali: " . $row['ILOSC_MIEJSC'] . "</option>";
+                }
             ?>
             </select><br>
-        Data <input type="date" id="daterequest" name="daterequest"><br>
+        Data <input type="datetime-local" id="daterequest" name="daterequest"><br>
         <input type="submit" value="Dodaj spektakl">
     </form>
 </body>
@@ -65,18 +69,8 @@
     
     }
 
-    if (isset($_POST["movierequest"])) {
-        $ReqMovie = $_POST["movierequest"];
-        $ReqRoom = $_POST["roomrequest"];
-        $ReqDate = $_POST["daterequest"];
-
+    if (isset($_POST["movie"])) {
         $mysqli = new mysqli("localhost","root","","kino");
-        
-        $Movietitle = $mysqli -> query("SELECT FILMY.TYTUŁ FROM FILMY WHERE TYTUŁ = $ReqMovie;");
-        $Room = $mysqli -> query("SELECT SALE.ID, SALE.ILOSC_MIEJSC FROM SALE WHERE ID = $ReqRoom;");
-        $Movierow = $MovieTitle -> fetch_assoc();
-        $Roomrow = $Roomrow -> fetch_assoc();
-        echo $Movierow;
-
+        $mysqli -> query("INSERT INTO ")
     }
 ?>
